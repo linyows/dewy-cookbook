@@ -1,0 +1,19 @@
+[Unit]
+Description=Dewy
+Documentation=https://github.com/linyows/dewy
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+User=<%= node['dewy']['app_user'] %>
+Group=<%= node['dewy']['app_group'] %>
+Environment=GOMAXPROCS=2
+Restart=on-failure
+WorkingDirectory=<%= node['dewy']['app_dir'] %>
+EnvironmentFile=/etc/default/dewy
+ExecStart=<%= node['dewy']['command'] %>
+ExecReload=/bin/kill -HUP $MAINPID
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target
