@@ -1,4 +1,12 @@
+<%- if node['dewy']['github_token'] != '' %>
 GITHUB_TOKEN=<%= node['dewy']['github_token'] %>
+<% end -%>
+<%- if node['dewy']['github_endpoint'] != '' %>
 GITHUB_ENDPOINT=<%= node['dewy']['github_endpoint'] %>
+<% end -%>
+<%- if node['dewy']['slack_token'] != '' %>
 SLACK_TOKEN=<%= node['dewy']['slack_token'] %>
+<% end -%>
+<%- if node['dewy']['slack_chanel'] != '' %>
 SLACK_CHANNEL=<%= node['dewy']['slack_channel'] %>
+<% end -%>
