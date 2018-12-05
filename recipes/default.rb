@@ -16,6 +16,7 @@ execute 'download and extract' do
     tar xvf #{node['dewy']['asset']}
     rm -f #{node['dewy']['asset']}
   CMD
+  only_if { !File.exists?("#{node['dewy']['bin']}/dewy") }
 end
 
 if node['dewy']['group'] == 'nobody'
