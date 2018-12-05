@@ -8,7 +8,7 @@ execute 'systemctl daemon-reload' do
 end
 
 execute 'download and extract' do
-  cwd '/usr/bin'
+  cwd node['dewy']['bin']
   command <<-CMD
     link=$(curl -s #{node['dewy']['github_api']}/#{node['dewy']['version']} | grep browser_download_url | grep #{node['dewy']['asset']} | awk '{print $2}' | tr -d '"')
     curl -LJOs -H 'Accept: application/octet-stream' $link
