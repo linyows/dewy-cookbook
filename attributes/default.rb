@@ -5,6 +5,7 @@ default['dewy']['dir']                = '/opt/dewy-testapp'
 default['dewy']['command']            = "server -r linyows/dewy-testapp -a dewy-testapp_linux_amd64.tar.gz -- #{node['dewy']['dir']}/current/dewy-testapp"
 
 default['dewy']['version']            = 'latest'
+default['dewy']['replace']            = false
 default['dewy']['github_api']         = 'https://api.github.com/repos/linyows/dewy/releases'
 default['dewy']['asset']              = 'dewy_linux_amd64.tar.gz'
 

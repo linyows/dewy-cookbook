@@ -17,7 +17,7 @@ execute 'download and extract' do
     rm -f #{node['dewy']['asset']}
     chown #{node['dewy']['user'] == 'nobody' ? 'root' : node['dewy']['user']}:#{node['dewy']['group'] == 'nobody' ? 'root' : node['dewy']['group']} dewy
   CMD
-  only_if { !File.exists?("#{node['dewy']['bin']}/dewy") }
+  only_if { !File.exists?("#{node['dewy']['bin']}/dewy") || node['dewy']['replace'] }
 end
 
 if node['dewy']['group'] == 'nobody'
