@@ -7,7 +7,7 @@ execute 'systemctl daemon-reload' do
   action :nothing
 end
 
-if node['dewy']['group'] == 'nobody'
+if node['dewy']['group'] != 'nobody'
   group node['dewy']['group'] do
     system true
   end
