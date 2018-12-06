@@ -4,7 +4,7 @@ maintainer_email 'linyows@gmail.com'
 license 'MIT'
 description 'Installs/Configures dewy'
 long_description 'Installs/Configures dewy'
-version '0.3.1'
+version '0.4.0'
 
 %w(centos).each do |os|
   supports os
